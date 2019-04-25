@@ -41,23 +41,23 @@ void solve_equation_rgk(float x_init, float x_end, float delta_x, float omega, s
     y_old=y;
     z_old=z;    
       
-    k0= y_old*f;
-    m0= z_old ;
+    k0= y*f;
+    m0= z ;
     z = z_old + delta_x*k0*0.5;    
     y = y_old + delta_x*m0*0.5;
           
-    k1= y_old*f; 
-    m1= z_old; 
+    k1= y*f; 
+    m1= z; 
     z = z_old + delta_x*k1*0.5;    
-    y = y + delta_x*m1*0.5;
+    y = y_old + delta_x*m1*0.5;
           
-    k2= y_old*f;
-    m2= z_old; 
+    k2= y*f;
+    m2= z; 
     z = z_old + delta_x*k2;    
     y = y_old + delta_x*m2;
           
-    k3= y_old*f; 
-    m3= z_old; 
+    k3= y*f; 
+    m3= z; 
     
           
     kp= (k0+(k1*2)+(k2*2)+k3)/6;    
